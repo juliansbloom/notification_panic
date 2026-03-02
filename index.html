@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <title>Notification Panic</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== MENU SCREEN ===== -->
+  <div id="screen-menu" class="screen active">
+    <div class="menu-bg-dots"></div>
+    <div class="menu-content">
+      <div class="game-logo">📱</div>
+      <h1 class="game-title">Notification<br /><span>Panic</span></h1>
+      <p class="game-subtitle">Swipe fast. Stay relevant.</p>
+      <div class="highscore-chip" id="menu-highscore">Best: 0s</div>
+      <button id="btn-play" class="btn-primary">TAP TO PLAY</button>
+      <div class="controls-hint">
+        <div class="hint-item hint-left-item">
+          <span class="hint-arrow">←</span>
+          <span>DELETE bad</span>
+        </div>
+        <div class="hint-divider"></div>
+        <div class="hint-item hint-right-item">
+          <span>KEEP good</span>
+          <span class="hint-arrow">→</span>
+        </div>
+      </div>
+      <div class="menu-footer">No internet needed · Offline play</div>
+    </div>
+  </div>
+
+  <!-- ===== GAME SCREEN ===== -->
+  <div id="screen-game" class="screen">
+
+    <!-- HUD -->
+    <div class="hud">
+      <div class="hud-row">
+        <div class="hud-bar-group">
+          <span class="hud-label">❤️</span>
+          <div class="bar-track">
+            <div class="bar-fill bar-social" id="bar-social"></div>
+          </div>
+          <span class="hud-val" id="val-social">100</span>
+        </div>
+        <div class="hud-bar-group">
+          <span class="hud-label">🔥</span>
+          <div class="bar-track">
+            <div class="bar-fill bar-rep" id="bar-rep"></div>
+          </div>
+          <span class="hud-val" id="val-rep">100</span>
+        </div>
+        <div class="hud-time">
+          <span class="time-icon">⏱</span>
+          <span id="val-time">0s</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Swipe direction hints -->
+    <div class="swipe-hints">
+      <span class="sh-left">← DELETE</span>
+      <span class="sh-combo" id="combo-display"></span>
+      <span class="sh-right">KEEP →</span>
+    </div>
+
+    <!-- Card area -->
+    <div class="card-area" id="card-area">
+      <div class="card-placeholder">
+        <div class="placeholder-dot"></div>
+        <div class="placeholder-dot"></div>
+        <div class="placeholder-dot"></div>
+      </div>
+    </div>
+
+    <!-- Panic level -->
+    <div class="panic-area">
+      <div class="panic-header">
+        <span class="panic-label">PANIC LEVEL</span>
+        <span class="panic-val" id="panic-val">0%</span>
+      </div>
+      <div class="panic-track">
+        <div class="panic-fill" id="panic-fill"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== GAME OVER SCREEN ===== -->
+  <div id="screen-gameover" class="screen">
+    <div class="gameover-content">
+      <div class="gameover-icon" id="gameover-icon">💀</div>
+      <h2 class="gameover-title">GAME OVER</h2>
+      <p class="gameover-reason" id="gameover-reason"></p>
+
+      <div class="stats-grid">
+        <div class="stat-box">
+          <div class="stat-val" id="stat-time">0s</div>
+          <div class="stat-lbl">Time Survived</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val" id="stat-correct">0</div>
+          <div class="stat-lbl">Correct Swipes</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val" id="stat-combo">0</div>
+          <div class="stat-lbl">Best Combo</div>
+        </div>
+      </div>
+
+      <div class="new-best" id="new-best">🎉 NEW BEST!</div>
+
+      <div class="gameover-actions">
+        <button id="btn-retry" class="btn-primary">RETRY</button>
+        <button id="btn-menu" class="btn-secondary">MENU</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating feedback layer -->
+  <div id="feedback-layer" aria-hidden="true"></div>
+
+  <script src="game.js"></script>
+</body>
+</html>
