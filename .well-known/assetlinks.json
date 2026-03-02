@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.jaymode.notificationpanic",
+        "sha256_cert_fingerprints": ["15:79:52:07:85:2F:57:97:FD:CC:8E:5F:D8:14:2C:B3:3F:45:56:42:43:B0:50:9F:38:D3:7C:97:50:63:6D:B7"]
+      }
+    }]
